@@ -1,0 +1,13 @@
+{
+  "name": "simfer-com-ru",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-pages.mjs",
+    "check": "node scripts/check-seo.cjs",
+    "test": "node scripts/check-seo.cjs && node scripts/test-request-js.cjs && node scripts/test-request-http.cjs && node scripts/test-sitemap.cjs",
+    "release": "node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.15"
+  }
+}

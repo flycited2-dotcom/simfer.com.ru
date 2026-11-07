@@ -1,0 +1,17 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+# Sprinthost: nginx terminates TLS and passes X-Forwarded-Proto to Apache.
+# HTTPS is checked as well so the same file works with direct Apache TLS.
+RewriteCond %{HTTP_HOST} ^www\.simfer\.com\.ru$ [NC]
+RewriteRule ^ https://simfer.com.ru%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+RewriteCond %{HTTP_HOST} ^simfer\.com\.ru$ [NC]
+RewriteRule ^ https://simfer.com.ru%{REQUEST_URI} [R=301,L,NE]
+
+# Avoid a second index URL. Preserve path and query string.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[?\s] [NC]
+RewriteRule ^(.*/)?index\.html$ https://simfer.com.ru/$1 [R=301,L,NE]
+
+# No catch-all routing: the article publisher owns /articles/.
