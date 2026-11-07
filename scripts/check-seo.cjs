@@ -23,6 +23,7 @@ for (const file of files) {
   assert.equal(document.querySelectorAll('script[type="application/ld+json"]').length,1);
   const org=JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent);
   assert.equal(org['@type'],'Organization'); assert.equal(org.taxID,'9102300105'); assert.equal(org.email,'info@simfer.com.ru');
+  assert.equal(org.identifier.propertyID,'ОГРН'); assert.equal(org.identifier.value,'1249100014899');
   assert(document.querySelector('form.request-form[action="/request.php"]'));
   assert(html.includes("106177642"),'Metrika preserved');
   assert(document.querySelector('footer a[href="/articles/"]'));
