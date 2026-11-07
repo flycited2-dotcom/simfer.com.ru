@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>ТЕХНОЛАЙН ТРЕЙД — Поставки оборудования и товаров</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ООО «ТЕХНОЛАЙН ТРЕЙД» — поставки оборудования и товаров широкого спектра, опт, B2B, участие в госзакупках. г. Симферополь, поставки по России." />
+
+  <!-- Шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+:root {
+  --bg-main: #05060a;
+  --bg-section: #0c0f17;
+  --bg-card: #111522;
+  --accent: #d4af37;
+  --accent-soft: rgba(212, 175, 55, 0.18);
+  --text-main: #f5f5f5;
+  --text-muted: #9ca3af;
+  --border-soft: rgba(148, 163, 184, 0.3);
+  --danger: #ef4444;
+  --max-width: 1120px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.9);
+  --transition-fast: 0.2s ease-out;
+  --transition-med: 0.35s ease-out;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 0% 0%, #1f2933 0, #05060a 36%, #020308 100%);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* Layout */
+.page-wrap { min-height: 100vh; display: flex; flex-direction: column; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.25rem; }
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  background: radial-gradient(circle at 0% -60%, rgba(212, 175, 55, 0.22), transparent 55%), rgba(5, 6, 10, 0.86);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.95rem 0;
+  gap: 1rem;
+}
+
+.logo-block { display: flex; align-items: center; gap: 0.75rem; }
+
+/* Logo (final) */
+.logo-mark {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: radial-gradient(circle at 30% 20%, #1f2937, #020617);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  box-shadow: 0 0 26px rgba(212, 175, 55, 0.5), inset 0 0 12px rgba(0, 0, 0, 0.85);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-mark img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.65)) contrast(1.1);
+}
+
+.logo-block:hover .logo-mark {
+  box-shadow: 0 0 36px rgba(212, 175, 55, 0.75), inset 0 0 14px rgba(0, 0, 0, 0.9);
+  transform: translateY(-1px);
+}
+
+.logo-block > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+  margin-left: 4px;
+}
+
+.logo-text-main {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: linear-gradient(180deg, #f9fafb 0%, #d1d5db 45%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-text-sub {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+nav { display: flex; align-items: center; gap: 1.25rem; font-size: 0.85rem; }
+
+.nav-link {
+  position: relative;
+  padding-bottom: 0.15rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fbbf24, #d4af37, #f97316);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover { color: var(--text-main); }
+.nav-link:hover::after { width: 100%; }
+
+.header-contacts { display: flex; align-items: center; gap: 0.6rem; }
+.header-phone { font-size: 0.88rem; color: var(--text-main); white-space: nowrap; margin-right: 4px; }
+
+.pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.26), rgba(15, 23, 42, 0.94));
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.35), inset 0 0 6px rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.pill span { font-weight: 500; }
+
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 26px rgba(212, 175, 55, 0.55), inset 0 0 6px rgba(0, 0, 0, 0.8);
+  border-color: #facc15;
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+}
+
+/* Hero */
+.hero { position: relative; padding: 3.75rem 0 3.25rem; overflow: hidden; }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -200px -40%;
+  background: radial-gradient(circle at 10% 0, rgba(212, 175, 55, 0.12), transparent 52%),
+              radial-gradient(circle at 80% 0, rgba(59, 130, 246, 0.12), transparent 52%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.7);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+  line-height: 1;
+}
+
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.8), rgba(245, 158, 11, 0.95));
+  color: #111827;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.hero-title {
+  font-size: clamp(2.15rem, 4vw, 2.9rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  margin-bottom: 0.9rem;
+}
+
+.hero-title span {
+  background: linear-gradient(110deg, #fbbf24, #f97316, #facc15);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  color: #b6bcc6;
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-highlights { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.7rem; font-size: 0.78rem; }
+
+.hero-tag {
+  border-radius: 999px;
+  padding: 0.28rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-muted);
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; margin-bottom: 1.3rem; }
+.hero-actions .btn-primary { font-weight: 600; }
+.hero-actions .btn-outline { opacity: 0.9; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition-med), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: radial-gradient(circle at 0 0, #facc15, #d97706, #92400e);
+  color: #111827;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85), 0 0 22px rgba(250, 204, 21, 0.7);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9), 0 0 28px rgba(250, 204, 21, 0.9);
+}
+
+.btn-outline {
+  border-color: rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.7);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  border-color: rgba(212, 175, 55, 0.9);
+  background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.38), rgba(15, 23, 42, 0.98));
+  box-shadow: 0 0 26px rgba(212, 175, 55, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-subtext { font-size: 0.75rem; color: var(--text-muted); }
+
+.hero-note { font-size: 0.78rem; color: var(--text-muted); }
+.hero-note strong { color: #e5e7eb; font-weight: 500; }
+
+/* Hero visual */
+.hero-visual { position: relative; }
+
+.hero-card {
+  border-radius: var(--radius-xl);
+  padding: 1.05rem 1.05rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at 10% 0, rgba(212, 175, 55, 0.24), transparent 65%),
+              radial-gradient(circle at 100% 60%, rgba(59, 130, 246, 0.3), transparent 68%),
+              rgba(5, 6, 11, 0.96);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 0 0, rgba(250, 250, 250, 0.2), transparent 50%),
+              radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.35), transparent 55%);
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.hero-card-inner { position: relative; z-index: 1; }
+.hero-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; }
+.hero-card-title { font-size: 0.86rem; font-weight: 600; }
+
+.hero-chip {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.7);
+}
+
+.hero-kpi-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.55rem; margin-bottom: 0.7rem; }
+.hero-kpi { border-radius: 14px; padding: 0.5rem 0.55rem; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(148, 163, 184, 0.42); font-size: 0.7rem; }
+.hero-kpi-label { color: var(--text-muted); margin-bottom: 0.1rem; }
+.hero-kpi-value { font-weight: 600; font-size: 0.75rem; }
+.hero-kpi-value span { color: var(--accent); }
+
+.hero-card-divider { height: 1px; border-radius: 999px; margin: 0.5rem 0; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent); opacity: 0.7; }
+.hero-card-list { list-style: none; font-size: 0.75rem; color: var(--text-muted); display: grid; gap: 0.2rem; margin-bottom: 0.4rem; }
+.hero-card-list li::before { content: "• "; color: var(--accent); }
+
+.hero-card-footer { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+.hero-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(34, 197, 94, 0.7);
+  color: #bbf7d0;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+}
+
+.hero-card-status-dot { width: 7px; height: 7px; border-radius: 999px; background: #22c55e; }
+.hero-card-meta { text-align: right; font-size: 0.7rem; }
+.hero-card-meta span { color: var(--accent); }
+
+/* Sections */
+section { padding: 2.6rem 0; position: relative; }
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% -80%, rgba(15, 23, 42, 0.9), transparent 65%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.section-inner { position: relative; z-index: 1; }
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.section-title-block { max-width: 24rem; }
+.section-kicker { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem; }
+.section-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.25rem; }
+.section-subtitle { font-size: 0.85rem; color: var(--text-muted); }
+.section-note { font-size: 0.78rem; color: var(--text-muted); max-width: 22rem; }
+
+.section-bg {
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.95));
+  box-shadow: var(--shadow-soft);
+  padding: 1.6rem 1.5rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 10% 0, rgba(212, 175, 55, 0.18), transparent 50%),
+              radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.22), transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.section-bg-inner { position: relative; z-index: 1; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 1.5rem; font-size: 0.88rem; color: var(--text-muted); }
+.about-text p + p { margin-top: 0.7rem; }
+.about-facts { display: grid; gap: 0.7rem; }
+
+.fact-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; font-size: 0.8rem; }
+.fact-label { color: var(--text-muted); }
+.fact-value { font-weight: 500; color: #e5e7eb; }
+
+/* Cards */
+.cards-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+
+.card {
+  border-radius: 16px;
+  padding: 0.85rem 0.9rem 0.9rem;
+  background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  font-size: 0.86rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: -30%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.2), transparent 55%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  margin-bottom: 0.35rem;
+  background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.9), rgba(146, 64, 14, 0.95));
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.6);
+}
+
+.card-title { font-weight: 600; margin-bottom: 0.25rem; color: #f9fafb; font-size: 0.92rem; }
+.card-text { font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); }
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85), 0 0 18px rgba(212, 175, 55, 0.35);
+}
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.55rem; }
+.card-tag { font-size: 0.7rem; padding: 0.18rem 0.5rem; border-radius: 999px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(148, 163, 184, 0.45); color: var(--text-muted); }
+
+/* Advantages */
+.adv-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.7rem; font-size: 0.8rem; }
+
+.adv-item {
+  border-radius: 14px;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.adv-label { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 0.15rem; letter-spacing: 0.01em; }
+.adv-value { font-weight: 500; color: #e5e7eb; font-size: 0.82rem; line-height: 1.4; }
+
+.adv-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.75), 0 0 14px rgba(212, 175, 55, 0.25);
+}
+
+/* Steps */
+.steps-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.7rem; font-size: 0.78rem; }
+
+.step {
+  border-radius: 999px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.95);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  text-align: center;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.95), rgba(250, 204, 21, 0.8));
+  color: #111827;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.55);
+}
+
+.step:hover {
+  transform: translateY(-1px);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+/* Geography & Comfort */
+.two-col { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.2rem; font-size: 0.86rem; color: var(--text-muted); }
+
+.geo-highlight {
+  margin-top: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 14px;
+  border: 1px dashed rgba(212, 175, 55, 0.8);
+  background: rgba(15, 23, 42, 0.88);
+  font-size: 0.78rem;
+}
+
+.comfort-list { list-style: none; display: grid; gap: 0.3rem; font-size: 0.8rem; }
+.comfort-list li::before { content: "— "; color: var(--accent); }
+
+/* Contacts */
+.contacts-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.4rem; font-size: 0.85rem; }
+
+.contact-main { display: grid; gap: 0.5rem; }
+.contact-name { font-weight: 600; font-size: 1rem; }
+
+.contact-row { display: flex; align-items: baseline; gap: 0.5rem; }
+.contact-label { width: 70px; font-size: 0.78rem; color: var(--text-muted); }
+.contact-value { font-size: 0.86rem; }
+
+.contact-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.6rem; }
+.contact-note { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+.contact-card {
+  border-radius: 16px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: rgba(15, 23, 42, 0.95);
+  font-size: 0.8rem;
+}
+
+.contact-card-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.35rem; }
+.contact-card-row { display: flex; justify-content: space-between; gap: 0.6rem; margin-top: 0.2rem; }
+.contact-card-row span:last-child { color: #e5e7eb; font-weight: 500; }
+
+/* Contacts logo (keep behavior, no conflicts) */
+#contacts .contacts-grid {
+  grid-template-columns: 1.2fr 1fr 1fr;
+  align-items: center;
+}
+
+#contacts .contact-logo {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#contacts .contact-logo.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#contacts .contact-logo img {
+  display: block;
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.3));
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.45);
+  background: radial-gradient(circle at 50% 140%, rgba(15, 23, 42, 0.94), #020617);
+  padding: 1.2rem 0 1.4rem;
+  margin-top: 1.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+
+.footer-brand { display: flex; align-items: center; gap: 0.4rem; }
+
+.footer-dot { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 12px rgba(212, 175, 55, 0.8); }
+
+.footer-links { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+.footer-link { cursor: default; }
+.footer-link span { color: var(--text-main); }
+
+/* Reveal Animations */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
+.delay-4 { transition-delay: 0.32s; }
+.delay-5 { transition-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-top: 2.6rem; }
+  .hero-visual { order: -1; }
+
+  .adv-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .steps-row { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 0.5rem; }
+
+  .about-grid, .two-col, .contacts-grid { grid-template-columns: minmax(0, 1fr); }
+
+  /* contacts logo off (as before) */
+  #contacts .contact-logo { display: none; }
+  #contacts .contacts-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 780px) {
+  nav { display: none; }
+  .header-inner { padding-block: 0.7rem; }
+  .hero { padding-top: 2.05rem; }
+  .section-bg { padding-inline: 1.05rem; }
+  .cards-grid { grid-template-columns: minmax(0, 1fr); }
+  .adv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-card { margin-top: 0.2rem; }
+}
+
+@media (max-width: 520px) {
+  .header-contacts { gap: 0.4rem; }
+  .header-phone { display: none; }
+
+  .logo-mark { width: 52px; height: 52px; border-radius: 15px; }
+  .logo-mark img { width: 38px; height: 38px; }
+  .logo-block { gap: 0.65rem; }
+  .logo-text-main { font-size: 0.88rem; }
+  .logo-text-sub { font-size: 0.68rem; }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .steps-row, .adv-grid { grid-template-columns: minmax(0, 1fr); }
+  .section-bg { padding: 1.1rem 1rem 1.05rem; }
+  .hero-title { font-size: 1.6rem; line-height: 1.15; }
+  .hero-subtitle { font-size: 0.88rem; }
+  .hero-card { padding: 0.95rem; }
+
+  /* steps: mobile left align (as last intent in file) */
+  .step { justify-content: flex-start; text-align: left; }
+}
+/* ===== HEADER MENU ALIGN FIX ===== */
+
+/* Контейнер меню */
+header nav {
+  display: flex;
+  align-items: center;        /* вертикальное выравнивание */
+  justify-content: center;
+  gap: 20px;                  /* равные отступы */
+  height: 100%;               /* одинаковая высота */
+  white-space: nowrap;        /* запрет переносов */
+}
+
+/* Пункты меню */
+header nav .nav-link {
+  display: flex;
+  align-items: center;        /* центр текста по вертикали */
+  justify-content: center;
+  height: 36px;               /* ОДИНАКОВАЯ высота */
+  padding: 0 6px;             /* аккуратные поля */
+  line-height: 1;
+  font-size: 0.85rem;
+  white-space: nowrap;        /* запрет переноса слов */
+}
+
+/* Подчёркивание — строго по центру */
+header nav .nav-link::after {
+  bottom: -4px;
+}
+/* ===== HEADER LOGO & BRAND FIX (B2B STYLE) ===== */
+
+/* Общий контейнер логотипа */
+.logo-block {
+  display: flex;
+  align-items: center;          /* строго по центру по вертикали */
+  gap: 14px;
+}
+
+/* Контейнер логотипа */
+.logo-mark {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: radial-gradient(
+    circle at 30% 20%,
+    #1f2937,
+    #020617
+  );
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  box-shadow:
+    0 0 26px rgba(212, 175, 55, 0.45),
+    inset 0 0 12px rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Сам логотип */
+.logo-mark img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 8px rgba(212, 175, 55, 0.65))
+    contrast(1.05);
+}
+
+/* Текстовый блок */
+.logo-block > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+  margin-top: 2px; /* микрокоррекция */
+}
+
+/* ТЕХНОЛАЙН ТРЕЙД — серебристый, статусный */
+.logo-text-main {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    #f9fafb 0%,
+    #d1d5db 45%,
+    #9ca3af 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Подзаголовок */
+.logo-text-sub {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* Hover — минимальный, дорогой */
+.logo-block:hover .logo-mark {
+  box-shadow:
+    0 0 34px rgba(212, 175, 55, 0.7),
+    inset 0 0 14px rgba(0, 0, 0, 0.9);
+  transform: translateY(-1px);
+}
+/* ===== DESKTOP: REMOVE LOGO & BRAND TEXT ===== */
+@media (min-width: 961px) {
+
+  /* Полностью убираем логотип и текст */
+  .logo-block {
+    display: none;
+  }
+
+  /* Центруем меню в шапке */
+  .header-inner {
+    justify-content: center;
+  }
+
+  /* Меню — основной якорь */
+  header nav {
+    margin-right: auto;
+  }
+
+  /* Телефон + кнопка — справа */
+  .header-contacts {
+    margin-left: auto;
+  }
+}
+/* ================= MOBILE FIX PACK (<= 780px) ================= */
+@media (max-width: 780px) {
+
+  /* 1) УБИРАЕМ верхнее меню на мобиле (иначе все ломает) */
+  header nav {
+    display: none !important;
+  }
+
+  /* 2) Шапка: нормальная компоновка */
+  .header-inner{
+    padding: 10px 0 !important;
+    gap: 10px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* 3) Левый блок (если он есть): компактный, без «слипания» */
+  .logo-block{
+    display: flex !important;          /* на мобиле показываем */
+    align-items: center !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+  }
+
+  .logo-mark{
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 14px !important;
+  }
+  .logo-mark img{
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .logo-text-main{
+    font-size: 0.82rem !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.1 !important;
+  }
+  .logo-text-sub{
+    font-size: 0.66rem !important;
+    line-height: 1.1 !important;
+    margin-top: 2px !important;
+  }
+
+  /* 4) Правая часть: телефон + "Связаться" в одну линию */
+  .header-contacts{
+    gap: 8px !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .header-phone{
+    display: none !important; /* на мобиле скрываем длинный телефон */
+  }
+
+  .pill{
+    padding: 0.33rem 0.75rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* 5) HERO: сначала контент, затем карточка (как должно быть) */
+  .hero-inner{
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-content{ order: 0 !important; }
+  .hero-visual{ order: 1 !important; }
+
+  /* 6) HERO: отступы и читабельность */
+  .hero{
+    padding: 22px 0 22px !important;
+  }
+
+  .hero-title{
+    font-size: 1.55rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-subtitle{
+    font-size: 0.9rem !important;
+  }
+
+  /* 7) Кнопки на мобиле: ровные, одинаковые, без “прыжков” */
+  .hero-actions{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .hero-actions .btn{
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 52px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+  }
+
+  .btn-subtext{
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+  }
+
+  /* 8) Карточка справа: на мобиле во всю ширину, без сдавливания */
+  .hero-card{
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 10px auto 0 !important;
+  }
+}
+
+/* ================= SUPER SMALL (<= 520px) ================= */
+@media (max-width: 520px) {
+
+  /* Еще компактнее шапку */
+  .header-inner{
+    padding: 8px 0 !important;
+  }
+
+  .logo-text-main{
+    font-size: 0.78rem !important;
+  }
+
+  .logo-text-sub{
+    font-size: 0.64rem !important;
+  }
+
+  /* Кнопка "Связаться" чуть компактнее */
+  .pill{
+    padding: 0.3rem 0.7rem !important;
+    font-size: 0.76rem !important;
+  }
+}
+/* ===== DESKTOP CTA BUTTONS FIX ===== */
+@media (min-width: 961px) {
+
+  /* Контейнер кнопок */
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ===== WhatsApp ===== */
+  .hero-actions .btn-primary {
+    background: #25D366 !important;
+    color: #0b1f14 !important;
+    box-shadow: 0 0 22px rgba(37, 211, 102, 0.45) !important;
+  }
+
+  .hero-actions .btn-primary:hover {
+    background: #1ebe5d !important;
+    box-shadow: 0 0 28px rgba(37, 211, 102, 0.7) !important;
+  }
+
+  /* ===== Telegram ===== */
+  .btn-telegram {
+    background: #229ED9;
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.86rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow: 0 0 20px rgba(34, 158, 217, 0.45);
+  }
+
+  .btn-telegram:hover {
+    background: #1b8ec5;
+    box-shadow: 0 0 28px rgba(34, 158, 217, 0.7);
+    transform: translateY(-1px);
+  }
+
+  /* Убираем текст "или напишите в Telegram" */
+  .btn-subtext {
+    display: none !important;
+  }
+}
+/* ================= MOBILE CTA BUTTONS (FINAL) ================= */
+@media (max-width: 780px) {
+
+  /* Контейнер кнопок */
+  .hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+  }
+
+  /* Общий стиль всех кнопок */
+  .hero-actions a {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 54px !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 999px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+  }
+
+  /* ===== WhatsApp ===== */
+  .hero-actions .btn-primary {
+    background: #25D366 !important;
+    color: #0b1f14 !important;
+    box-shadow: 0 0 24px rgba(37, 211, 102, 0.45) !important;
+  }
+
+  .hero-actions .btn-primary:hover {
+    background: #1ebe5d !important;
+  }
+
+  /* ===== Позвонить (оставляем спокойной) ===== */
+  .hero-actions .btn-outline {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(148, 163, 184, 0.6) !important;
+    color: #f9fafb !important;
+  }
+
+  /* ===== Telegram ===== */
+  .hero-actions .btn-telegram {
+    background: #229ED9 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 22px rgba(34, 158, 217, 0.45) !important;
+  }
+
+  .hero-actions .btn-telegram:hover {
+    background: #1b8ec5 !important;
+  }
+
+  /* Убираем старый текст-подсказку */
+  .btn-subtext {
+    display: none !important;
+  }
+}
+/* ===== MOBILE HERO BUTTONS ===== */
+@media (max-width: 520px) {
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+    height: 52px;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 14px;
+  }
+}
+/* ===== EMAIL BUTTON ===== */
+.btn-mail {
+  background: linear-gradient(
+    180deg,
+    #f3f4f6 0%,
+    #d1d5db 50%,
+    #9ca3af 100%
+  );
+  color: #111827;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.55),
+    0 0 16px rgba(209,213,219,0.45);
+}
+
+.btn-mail:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 34px rgba(0,0,0,0.75),
+    0 0 22px rgba(209,213,219,0.75);
+}
+/* ================= FIX WHATSAPP BUTTON (DESKTOP + MOBILE) ================= */
+.hero-actions .btn-whatsapp {
+  background: #25D366 !important;
+  color: #0b1f14 !important;
+
+  border-radius: 14px !important;
+  height: 52px;
+  padding: 0 22px !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 24px rgba(37,211,102,0.55),
+    0 0 18px rgba(37,211,102,0.35) !important;
+}
+
+.hero-actions .btn-whatsapp:hover {
+  background: #1fb85a !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 34px rgba(37,211,102,0.75),
+    0 0 26px rgba(37,211,102,0.6) !important;
+}
+/* ================= HERO CTA — UNIFIED BUTTON STYLE ================= */
+
+/* Общий контейнер кнопок */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* БАЗОВЫЙ СТИЛЬ ДЛЯ ВСЕХ КНОПОК */
+.hero-actions .btn {
+  height: 52px;
+  padding: 0 22px;
+
+  border-radius: 999px; /* одинаковое скругление */
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: 
+    background .2s ease,
+    box-shadow .2s ease,
+    transform .15s ease;
+
+  border: none;
+}
+
+/* ================= COLORS ================= */
+
+/* WhatsApp */
+.hero-actions .btn-whatsapp {
+  background: #25D366;
+  color: #0b1f14;
+  box-shadow:
+    0 10px 24px rgba(37,211,102,0.55),
+    0 0 18px rgba(37,211,102,0.35);
+}
+
+.hero-actions .btn-whatsapp:hover {
+  background: #1fb85a;
+  transform: translateY(-1px);
+}
+
+/* Telegram */
+.hero-actions .btn-telegram {
+  background: #229ED9;
+  color: #ffffff;
+  box-shadow:
+    0 10px 24px rgba(34,158,217,0.55),
+    0 0 18px rgba(34,158,217,0.35);
+}
+
+.hero-actions .btn-telegram:hover {
+  background: #1c8fc6;
+  transform: translateY(-1px);
+}
+
+/* Позвонить */
+.hero-actions .btn-outline {
+  background: rgba(17,24,39,0.6);
+  color: #f9fafb;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.hero-actions .btn-outline:hover {
+  background: rgba(17,24,39,0.8);
+  transform: translateY(-1px);
+}
+
+/* E-mail */
+.hero-actions .btn-mail {
+  background: linear-gradient(
+    180deg,
+    #f3f4f6 0%,
+    #d1d5db 55%,
+    #9ca3af 100%
+  );
+  color: #111827;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.45),
+    0 0 18px rgba(209,213,219,0.45);
+}
+
+.hero-actions .btn-mail:hover {
+  transform: translateY(-1px);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 520px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ КНОПОК */
+.hero-actions a {
+  height: 52px !important;
+  padding: 0 24px !important;
+
+  border-radius: 999px !important;
+
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+
+  transition: background .2s ease, box-shadow .2s ease, transform .15s ease !important;
+}
+
+/* WhatsApp */
+.hero-actions .btn-whatsapp {
+  background: #25D366 !important;
+  color: #0b1f14 !important;
+  box-shadow: 0 10px 24px rgba(37,211,102,0.55) !important;
+}
+
+/* Telegram */
+.hero-actions .btn-telegram {
+  background: #229ED9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(34,158,217,0.55) !important;
+}
+
+/* Позвонить */
+.hero-actions .btn-call {
+  background: rgba(17,24,39,0.7) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+
+/* E-mail */
+.hero-actions .btn-mail {
+  background: linear-gradient(180deg,#f3f4f6,#d1d5db,#9ca3af) !important;
+  color: #111827 !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45) !important;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 520px) {
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-actions a {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+}
+/* ================= HERO BUTTONS: UNIFY SHAPE + LAYOUT ================= */
+
+/* ДЕСКТОП: все в один ряд */
+.hero-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap: nowrap;            /* один ряд */
+}
+
+/* Если экран уже узкий (но ещё не мобила) — пусть переносит, чтобы не ломалось */
+@media (max-width: 960px){
+  .hero-actions{ flex-wrap: wrap; }
+}
+
+/* БАЗОВАЯ ФОРМА ДЛЯ ВСЕХ 4 КНОПОК */
+.hero-actions .btn{
+  height:52px !important;
+  padding:0 22px !important;
+  border-radius:999px !important;   /* ОВАЛЬНАЯ форма у ВСЕХ */
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-size:16px !important;
+  font-weight:600 !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+  box-sizing:border-box !important;
+  border:1px solid transparent !important;
+  text-decoration:none !important;
+}
+
+/* WHATSAPP (бренд) */
+.hero-actions .btn-whatsapp{
+  background:#25D366 !important;
+  color:#0b1f14 !important;
+  box-shadow:0 10px 24px rgba(37,211,102,0.45) !important;
+}
+.hero-actions .btn-whatsapp:hover{
+  background:#1fb85a !important;
+}
+
+/* TELEGRAM (бренд) */
+.hero-actions .btn-telegram{
+  background:#229ED9 !important;
+  color:#fff !important;
+  box-shadow:0 10px 24px rgba(34,158,217,0.45) !important;
+}
+.hero-actions .btn-telegram:hover{
+  background:#1c8fc6 !important;
+}
+
+/* ПОЗВОНИТЬ (нейтральная) */
+.hero-actions .btn-call{
+  background:rgba(15,23,42,0.75) !important;
+  color:#f9fafb !important;
+  border-color:rgba(255,255,255,0.22) !important;
+}
+.hero-actions .btn-call:hover{
+  background:rgba(15,23,42,0.88) !important;
+}
+
+/* E-MAIL (светлая, аккуратная) */
+.hero-actions .btn-mail{
+  background:linear-gradient(180deg,#f3f4f6 0%,#d1d5db 55%,#9ca3af 100%) !important;
+  color:#111827 !important;
+  box-shadow:0 10px 24px rgba(0,0,0,0.35) !important;
+}
+.hero-actions .btn-mail:hover{
+  filter:brightness(0.98);
+}
+
+/* МОБИЛКА: столбец + одинаковая ширина, чтобы ВЛЕЗАЛО */
+@media (max-width: 520px){
+  .hero-actions{
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:12px !important;
+  }
+  .hero-actions .btn{
+    width:100% !important;
+    max-width:320px !important;
+    margin:0 auto !important;
+  }
+}
+/* ======================================================
+   CONTACTS PAGE — BUTTONS + TEXT FIX
+   ====================================================== */
+
+/* ---------- БЛОК КНОПОК (ДЕСКТОП) ---------- */
+.contacts-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.contacts-actions .btn {
+  height: 52px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* WhatsApp */
+.contacts-actions .btn-whatsapp {
+  background: #25D366;
+  color: #0b1f14;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.45);
+}
+
+/* Позвонить */
+.contacts-actions .btn-call {
+  background: rgba(17,24,39,0.7);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Telegram */
+.contacts-actions .btn-telegram {
+  background: #229ED9;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(34,158,217,0.45);
+}
+
+/* E-mail */
+.contacts-actions .btn-mail {
+  background: linear-gradient(
+    180deg,
+    #f3f4f6 0%,
+    #d1d5db 55%,
+    #9ca3af 100%
+  );
+  color: #111827;
+}
+
+/* ---------- БЛОК "ФОРМАТ СОТРУДНИЧЕСТВА" (ДЕСКТОП) ---------- */
+.cooperation-card,
+.format-cooperation {
+  padding: 24px 28px;
+}
+
+.cooperation-card .row,
+.format-cooperation .row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 10px 18px;
+  align-items: start;
+}
+
+.cooperation-card .label,
+.format-cooperation .label {
+  opacity: 0.7;
+}
+
+.cooperation-card .value,
+.format-cooperation .value {
+  font-weight: 500;
+}
+
+/* ---------- МОБИЛКА ---------- */
+@media (max-width: 520px) {
+
+  /* КНОПКИ — СТОЛБЕЦ */
+  .contacts-actions {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .contacts-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* ЦЕНТРОВКА ТЕКСТА (ОБВЕДЁННОГО ТОБОЙ) */
+  .contacts-card,
+  .contacts-card p,
+  .contacts-card .text,
+  .cooperation-card,
+  .format-cooperation {
+    text-align: center;
+  }
+
+  /* Формат сотрудничества — аккуратно в столбец */
+  .cooperation-card .row,
+  .format-cooperation .row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+/* ======================================================
+   FIX: ФОРМАТ СОТРУДНИЧЕСТВА
+   ====================================================== */
+
+/* Карточка */
+.format-cooperation,
+.cooperation-card {
+  padding: 22px 24px;
+}
+
+/* Заголовок */
+.format-cooperation h3,
+.cooperation-card h3 {
+  margin-bottom: 14px;
+}
+
+/* Все строки с параметрами */
+.format-cooperation p,
+.cooperation-card p {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Левая часть (подпись) */
+.format-cooperation p strong,
+.cooperation-card p strong {
+  font-weight: 500;
+  opacity: 0.75;
+  text-align: left;
+}
+
+/* Правая часть (значение) */
+.format-cooperation p span,
+.cooperation-card p span {
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+/* ===== МОБИЛКА ===== */
+@media (max-width: 520px) {
+
+  .format-cooperation p,
+  .cooperation-card p {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .format-cooperation p strong,
+  .cooperation-card p strong {
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  .format-cooperation p span,
+  .cooperation-card p span {
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo-block">
+         <div class="logo-mark">
+  <img src="logo.png" alt="ТЕХНОЛАЙН ТРЕЙД логотип">
+</div>
+
+          <div>
+            <div class="logo-text-main">ТЕХНОЛАЙН ТРЕЙД</div>
+            <div class="logo-text-sub">Поставки оборудования и товаров</div>
+          </div>
+        </div>
+
+        <nav>
+          <a class="nav-link" href="#about">О компании</a>
+          <a class="nav-link" href="#directions">Направления</a>
+          <a class="nav-link" href="#advantages">Преимущества</a>
+          <a class="nav-link" href="#process">Как работаем</a>
+          <a class="nav-link" href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="header-contacts">
+          <a href="tel:+79785792995" class="header-phone">+7 (978) 579-29-95</a>
+          <a href="#contacts" class="pill">
+            <span class="pill-dot"></span>
+            <span>Связаться</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content reveal">
+            <div class="eyebrow">
+              <span class="eyebrow-badge">Оптовые поставки</span>
+              <span>Климат, техника и товары широкого спектра</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span>ТЕХНОЛАЙН ТРЕЙД</span>  поставки оборудования и товаров по России
+            </h1>
+
+            <p class="hero-subtitle">
+              Оптовая торговля, снабжение организаций и участие в госзакупках. Комплектация объектов «под ключ», быстрые отгрузки, официальные документы.
+            </p>
+
+            <div class="hero-highlights">
+              <div class="hero-tag">г. Симферополь</div>
+              <div class="hero-tag">Работаем по РФ</div>
+              <div class="hero-tag">B2B и госзаказ</div>
+            </div>
+
+ <div class="hero-actions">
+  <a href="https://wa.me/79785792995" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+  <a href="https://t.me/+79785792995" target="_blank" class="btn btn-telegram">Telegram</a>
+  <a href="tel:+79785792995" class="btn btn-call">Позвонить</a>
+  <a href="mailto:info@simfer.com.ru" class="btn btn-mail">Написать E-mail</a>
+</div>
+
+
+            <div class="hero-note">
+              <strong>ООО «ТЕХНОЛАЙН ТРЕЙД»</strong> — надёжный партнёр для бизнеса, муниципальных и государственных учреждений.
+            </div>
+          </div>
+
+          <div class="hero-visual reveal delay-2">
+            <div class="hero-card">
+              <div class="hero-card-inner">
+                <div class="hero-card-header">
+                  <div class="hero-card-title">Статус поставщика</div>
+                  <div class="hero-chip">B2B / Госзакупки</div>
+                </div>
+
+                <div class="hero-kpi-row">
+                  <div class="hero-kpi">
+                    <div class="hero-kpi-label">Направления</div>
+                    <div class="hero-kpi-value"><span>Климатическое оборудование</span> техника, товары</div>
+                  </div>
+                  <div class="hero-kpi">
+                    <div class="hero-kpi-label">Формат</div>
+                    <div class="hero-kpi-value">Опт, B2B, B2C, ГОСЗАКАЗЫ, Поддержка</div>
+                  </div>
+                  <div class="hero-kpi">
+                    <div class="hero-kpi-label">Регион</div>
+                    <div class="hero-kpi-value">Крым, ЮФО + РФ, Запорожская обл., Херсонская обл.</div>
+                  </div>
+                </div>
+
+                <div class="hero-card-divider"></div>
+
+                <ul class="hero-card-list">
+                  <li>Подбор оборудования и товаров под задачи заказчика</li>
+                  <li>Поставки по ФЗ-44 и ФЗ-223, полный комплект документов</li>
+                  <li>Согласование сроков, условий и логистики «под ключ»</li>
+                </ul>
+
+                <div class="hero-card-footer">
+                  <div class="hero-card-status">
+                    <span class="hero-card-status-dot"></span>
+                    <span>Принимаем запросы</span>
+                  </div>
+                  <div class="hero-card-meta">
+                    г. Симферополь<br />
+                    <span>ООО «ТЕХНОЛАЙН ТРЕЙД»</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-inner reveal">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-kicker">О компании</div>
+              <div class="section-title">Современная снабженческая компания</div>
+              <div class="section-subtitle">
+                Работаем для бизнеса, коммерческих организаций и госучреждений, комбинируя оптовую торговлю, интернет-коммерцию и участие в тендерах.
+              </div>
+            </div>
+            <div class="section-note">
+              Основа работы — скорость реакции, прозрачность условий и индивидуальный подбор решений под запрос заказчика.
+            </div>
+          </div>
+
+          <div class="section-bg">
+            <div class="section-bg-inner about-grid">
+              <div class="about-text">
+                <p>
+                  ООО «ТЕХНОЛАЙН ТРЕЙД» специализируется на поставках климатического оборудования, бытовой техники и товаров широкого спектра. Мы выстраиваем долгосрочные отношения с клиентами, беря на себя подбор, комплектацию и сопровождение поставок.
+                </p>
+                <p>
+                  Наши клиенты — коммерческие компании, оптовые покупатели, торговые организации, а также муниципальные и государственные структуры. Понимаем требования к документации и поставкам в рамках ФЗ-44 и ФЗ-223.
+                </p>
+              </div>
+
+              <div class="about-facts">
+                <div class="fact-row">
+                  <div class="fact-label">Организация</div>
+                  <div class="fact-value">ООО «ТЕХНОЛАЙН ТРЕЙД»</div>
+                </div>
+                <div class="fact-row">
+                  <div class="fact-label">ИНН</div>
+                  <div class="fact-value">9102300105</div>
+                </div>
+                <div class="fact-row">
+                  <div class="fact-label">Город</div>
+                  <div class="fact-value">г. Симферополь</div>
+                </div>
+                <div class="fact-row">
+                  <div class="fact-label">Формат</div>
+                  <div class="fact-value">Опт, B2B, госзакупки</div>
+                </div>
+                <div class="fact-row">
+                  <div class="fact-label">Работаем</div>
+                  <div class="fact-value">Крым, Запорожская обл., Херсонская обл., поставки по РФ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DIRECTIONS -->
+    <section id="directions">
+      <div class="container">
+        <div class="section-inner reveal">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-kicker">Направления</div>
+              <div class="section-title">Ключевые направления поставок</div>
+              <div class="section-subtitle">
+                Комплектуем объекты и снабжаем клиентов оборудованием и товарами под конкретные задачи, от климата до товаров широкого спектра.
+              </div>
+            </div>
+            <div class="section-note">
+              Под каждый запрос формируется индивидуальное предложение с учётом бюджета, сроков и требований к характеристикам.
+            </div>
+          </div>
+
+          <div class="section-bg">
+            <div class="section-bg-inner">
+              <div class="cards-grid">
+                <div class="card">
+                  <div class="card-icon">❄</div>
+                  <div class="card-title">Климатическое оборудование</div>
+                  <div class="card-text">
+                    Кондиционеры, сплит-системы, климатические комплексы и вентиляционные решения для квартир, офисов и коммерческих объектов.
+                  </div>
+                  <div class="card-tags">
+                    <div class="card-tag">Подбор по мощности</div>
+                    <div class="card-tag">Решения для объектов</div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-icon">⚙</div>
+                  <div class="card-title">Бытовая техника и электроника</div>
+                  <div class="card-text">
+                    Мелкая и крупная техника, оборудование для дома и офиса, устройства массового спроса и профессионального применения.
+                  </div>
+                  <div class="card-tags">
+                    <div class="card-tag">Оптовые поставки</div>
+                    <div class="card-tag">Брендовые решения</div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-icon">📦</div>
+                  <div class="card-title">Товары широкого спектра</div>
+                  <div class="card-text">
+                    Товары для дома, бизнеса и специализированных задач. Подбор позиций под заявку заказчика с учётом ассортимента рынка.
+                  </div>
+                  <div class="card-tags">
+                    <div class="card-tag">По спецификации</div>
+                    <div class="card-tag">Под ключ</div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-icon">🏛</div>
+                  <div class="card-title">Оборудование для госзакупок</div>
+                  <div class="card-text">
+                    Поставки в рамках ФЗ-44 и ФЗ-223, оформление документов, спецификаций и коммерческих предложений для участия в тендерах.
+                  </div>
+                  <div class="card-tags">
+                    <div class="card-tag">ФЗ-44 / ФЗ-223</div>
+                    <div class="card-tag">Документы и сопровождение</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section id="advantages">
+      <div class="container">
+        <div class="section-inner reveal">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-kicker">Преимущества</div>
+              <div class="section-title">Почему с нами удобно работать</div>
+              <div class="section-subtitle">
+                Комбинация скорости, ассортимента и понимания специфики B2B и госзаказа.
+              </div>
+            </div>
+            <div class="section-note">
+              Мы сопровождаем клиента на всем пути — от первичного запроса до поставки и пост-поддержки.
+            </div>
+          </div>
+
+          <div class="section-bg">
+            <div class="section-bg-inner adv-grid">
+              <div class="adv-item">
+                <div class="adv-label">Оперативные поставки</div>
+                <div class="adv-value">Быстрая обработка и отгрузка заказов</div>
+              </div>
+              <div class="adv-item">
+                <div class="adv-label">Ассортимент</div>
+                <div class="adv-value">От климата до техники и товаров</div>
+              </div>
+              <div class="adv-item">
+                <div class="adv-label">Госзакупки</div>
+                <div class="adv-value">Понимаем требования ФЗ-44 и ФЗ-223</div>
+              </div>
+              <div class="adv-item">
+                <div class="adv-label">Сделки под ключ</div>
+                <div class="adv-value">Подбор + комплектация + логистика</div>
+              </div>
+              <div class="adv-item">
+                <div class="adv-label">Надёжность</div>
+                <div class="adv-value">Прозрачные условия и долгосрочный подход</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS & GEO + COMFORT -->
+    <section id="process">
+      <div class="container">
+        <div class="section-inner reveal">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-kicker">Процесс работы</div>
+              <div class="section-title">Как мы работаем с заказчиками</div>
+              <div class="section-subtitle">
+                Простая и понятная схема взаимодействия, удобная для бизнеса и государственных структур.
+              </div>
+            </div>
+            <div class="section-note">
+              На каждом этапе — живой контакт, консультация и контроль сроков.
+            </div>
+          </div>
+
+          <div class="section-bg" style="margin-bottom: 1.5rem;">
+            <div class="section-bg-inner">
+              <div class="steps-row">
+                <div class="step">
+                  <div class="step-num">1</div>
+                  <div>Запрос / ТЗ</div>
+                </div>
+                <div class="step">
+                  <div class="step-num">2</div>
+                  <div>Подбор решений</div>
+                </div>
+                <div class="step">
+                  <div class="step-num">3</div>
+                  <div>Коммерческое предложение</div>
+                </div>
+                <div class="step">
+                  <div class="step-num">4</div>
+                  <div>Согласование и отгрузка</div>
+                </div>
+                <div class="step">
+                  <div class="step-num">5</div>
+                  <div>Сопровождение и поддержка</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-bg">
+            <div class="section-bg-inner two-col">
+              <div>
+                <div class="section-kicker" style="margin-bottom: 0.3rem;">География</div>
+                <div class="section-title" style="font-size: 1.05rem; margin-bottom: 0.35rem;">
+                  Офис в Симферополе, поставки по всей России
+                </div>
+                <p>
+                  Центральный офис компании расположен в г. Симферополь. Работаем по Крыму, Запорожская обл., Херсонская обл., ЮФО и организуем поставки в другие регионы Российской Федерации.
+                </p>
+                <div class="geo-highlight">
+                  Доставка Личным автотранспортом, через ТК, Мейджик Транс, СДЭК, ПЭК, Деловые Линии, а также через курьерские и транспортные службы по договорённости.
+                </div>
+              </div>
+
+              <div>
+                <div class="section-kicker" style="margin-bottom: 0.3rem;">С нами удобно</div>
+                <ul class="comfort-list">
+                  <li>Всегда на связи в WhatsApp и Telegram</li>
+                  <li>Гибкая система цен и условий поставок</li>
+                  <li>Работаем с юр. лицами, ИП и физическими лицами</li>
+                  <li>Официальные счета, договоры, закрывающие документы</li>
+                  <li>Возможность долгосрочного контрактинга и регулярных поставок</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="contacts">
+      <div class="container">
+        <div class="section-inner reveal">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-kicker">Контакты</div>
+              <div class="section-title">Связаться с ТЕХНОЛАЙН ТРЕЙД</div>
+              <div class="section-subtitle">
+                Напишите запрос или позвоните — обсудим задачи, подберём решения и предложим удобный формат работы.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-bg">
+            <div class="section-bg-inner contacts-grid">
+              <div class="contact-main">
+                <div class="contact-name">ООО «ТЕХНОЛАЙН ТРЕЙД»</div>
+
+                <div class="contact-row">
+                  <div class="contact-label">ИНН</div>
+                  <div class="contact-value">9102300105</div>
+                </div>
+
+                <div class="contact-row">
+                  <div class="contact-label">Город</div>
+                  <div class="contact-value">г. Симферополь</div>
+                </div>
+
+                <div class="contact-row">
+                  <div class="contact-label">Телефон</div>
+                  <div class="contact-value">
+                    <a href="tel:+79785792995">+7 (978) 579-29-95</a><br />
+                    <a href="tel:+79788394042">+7 (978) 839-40-42</a>
+                  </div>
+                </div>
+
+                <div class="contact-row">
+                  <div class="contact-label">E-mail</div>
+                  <div class="contact-value">
+                    <a href="mailto:info@simfer.com.ru">info@simfer.com.ru</a>
+                  </div>
+                </div>
+
+                <div class="contact-row">
+                  <div class="contact-label">Сайт</div>
+                  <div class="contact-value">
+                    <a href="https://simfer.com.ru">simfer.com.ru</a>
+                  </div>
+                </div>
+
+                <div class="contacts-actions">
+  <a href="https://wa.me/79785792995" class="btn btn-whatsapp">WhatsApp</a>
+  <a href="tel:+79785792995" class="btn btn-call">Позвонить</a>
+  <a href="https://t.me/+79785792995" class="btn btn-telegram">Telegram</a>
+  <a href="mailto:info@simfer.com.ru" class="btn btn-mail">Написать E-mail</a>
+</div>
+
+
+                <div class="contact-note">
+                  В запросе можете указать раздел интереса (климат, техника, товары широкого спектра, госзакупки) и желаемые сроки поставки.
+                </div>
+              </div>
+<div class="contact-logo">
+  <img src="photo_2024-10-22_18-58-20.jpg" alt="">
+</div>
+
+              <div class="contact-card">
+                <div class="contact-card-title">Формат сотрудничества</div>
+                <div class="contact-card-row">
+                  <span>Кому поставляем</span>
+                  <span>B2B, опт, госучреждения</span>
+                </div>
+                <div class="contact-card-row">
+                  <span>Тип поставок</span>
+                  <span>Разовые и регулярные</span>
+                </div>
+                <div class="contact-card-row">
+                  <span>Документы</span>
+                  <span>Счета, договоры, закрывающие</span>
+                </div>
+                <div class="contact-card-row">
+                  <span>Заявки</span>
+                  <span>Через почту, телефон, мессенджеры</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div style="
+    width: 100%;
+    height: 320px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.5);
+    box-shadow: 0 0 30px rgba(212,175,55,0.25);
+  ">
+<iframe
+  src="https://yandex.ru/map-widget/v1/?ll=34.149120%2C44.976208&z=16&pt=34.149120,44.976208,pm2rdm"
+  width="100%"
+  height="100%"
+  frameborder="0"
+  allowfullscreen="true"
+  style="border:0; filter: grayscale(25%) brightness(88%) contrast(95%);">
+</iframe>
+
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-dot"></div>
+          <div>© 2025 ООО «Технолайн Трейд». Все права защищены.</div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-link">
+            Формат: <span>Опт, B2B, госзакупки</span>
+          </div>
+          <div class="footer-link">
+            Город: <span>Симферополь</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Плавное появление блоков при скролле
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document
+  .querySelectorAll(".reveal, #contacts .contact-logo")
+  .forEach((el) => observer.observe(el));
+
+
+</script>
+</body>
+</html>
